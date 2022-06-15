@@ -49,15 +49,15 @@ const Calculator = () => {
           break;
       }
 
+      const decimalsPlace =
+        values[0].toString().length - (values[0].toString().indexOf(".") + 1);
+
       try {
         values[0] = isNaN(result) ? "0" : result;
       } catch (e) {
         values[0] = state.values[0];
       }
-      values[1] = 0;
-
-      const decimalsPlace =
-        values[0].toString().length - (values[0].toString().indexOf(".") + 1);
+      values[1] = 0;       
 
       setState({
         displayValue: values[0].toString().includes(".")
